@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.auth.AuthActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.auth.verify.VerifyOtpViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:paddingBottom="12dp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="24dp"
+                    android:onClick="@{()->viewModel.showRegisterUI()}"
+                    android:padding="8dp"
+                    android:src="@drawable/back_icon" />
+
+                <TextView
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="OTP Verification"
+                    android:textColor="@color/textColorDark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Code has sent to"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/tvMobile"
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="+91 8750516909"
+                    android:textColor="@color/textColorDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:paddingTop="16sp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+
+                        android:id="@+id/etFirst"
+                        style="@style/TextStyle.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_otp_code"
+                        android:gravity="center"
+                        android:hint="#"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="1"
+                        android:maxLines="1"
+                        android:onTextChanged="@{viewModel::onTextChanged1}"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/textColorDark">
+
+                        <requestFocus />
+                    </androidx.appcompat.widget.AppCompatEditText>
+
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="match_parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSecond"
+                        style="@style/TextStyle.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_otp_code"
+                        android:gravity="center"
+                        android:hint="#"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="1"
+                        android:maxLines="1"
+                        android:onTextChanged="@{viewModel::onTextChanged2}"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/textColorDark" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="match_parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etThird"
+                        style="@style/TextStyle.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_otp_code"
+                        android:gravity="center"
+                        android:hint="#"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="1"
+                        android:maxLines="1"
+                        android:onTextChanged="@{viewModel::onTextChanged3}"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/textColorDark" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="match_parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etFour"
+                        style="@style/TextStyle.EditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_otp_code"
+                        android:gravity="center"
+                        android:hint="#"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:maxLength="1"
+                        android:maxLines="1"
+                        android:onTextChanged="@{viewModel::onTextChanged4}"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="@color/textColorDark" />
+                </LinearLayout>
+
+
+                <TextView
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Have not received the verification code ?"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:onClick="@{()->viewModel.onResendClick()}"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="Resend"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            style="@style/SpinKitView.FadingCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+            app:SpinKit_Color="@color/black" />
+
+
+        <Button
+            android:id="@+id/btnServerLogin"
+            style="@style/TextStyle.Heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="@drawable/roundbutton"
+            android:onClick="@{()->viewModel.onVerifyClick()}"
+            android:padding="10dp"
+            android:text="Verify"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+</layout>

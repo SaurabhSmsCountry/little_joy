@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.merchant.MerchantDetailsActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.merchant.MerchantViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            layout="@layout/toolbar_with_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/topSlider"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="180dp" />
+
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/indicatorTopSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_alignBottom="@+id/topSlider"
+                        android:background="#95000000" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDistance"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/indicatorTopSlider"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/right_img_green"
+                        android:gravity="center|top"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgPin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/tvDistance"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="-18dp"
+                        android:layout_toLeftOf="@+id/tvDistance"
+                        android:src="@drawable/currnet_icon" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            style="@style/TextStyle.Heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Time Slot"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/tvDesc"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Time Slot"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/rbRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:numStars="5"
+                        android:progressDrawable="@drawable/ratingbar"
+                        android:rating="2.1"
+                        android:stepSize="0.1" />
+
+                    <TextView
+                        android:id="@+id/tvRating"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:textStyle="bold"
+                        android:text="4.5"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_grey"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:id="@+id/tvCall"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/detail_call"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:text="Call"
+                        android:textColor="@color/black_effective"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvWifi"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/detail_wifi"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:text="WiFi"
+                        android:textColor="@color/black_effective"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvMusic"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/detail_music"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:text="Share"
+                        android:textColor="@color/black_effective"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvReviews"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/detail_rating"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:text="Reviews"
+                        android:textColor="@color/black_effective"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvDirections"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/detail_location"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:text="Directions"
+                        android:textColor="@color/black_effective"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+
+                    <TextView
+
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/black_effective"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Services Available For"
+                        android:textColor="@color/black_effective"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvService"
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Service"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Top Brands"
+                        android:textColor="@color/black_effective"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvBrands"
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/dark_gray"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/white_arrow_right" />
+
+
+                    <TextView
+                        android:id="@+id/tvTimings"
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Top Brands"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/white_arrow_left" />
+
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btnAppointment"
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/roundbutton"
+                    android:onClick="@{()->viewModel.navigateToAppointment()}"
+                    android:padding="10dp"
+                    android:text="Book Appointment"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</layout>

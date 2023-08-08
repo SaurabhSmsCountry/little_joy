@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_marginVertical="25dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@color/translucent_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.dashboard.orders.ShippingOrderDetailsFragment">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtShippingTo"
+                android:textSize="22sp"
+                android:text="Shipping To:"
+                android:fontFamily="@font/dosis_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBg"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/success_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/card_bg"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvOrderNo"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/dosis_bold"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="22sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtName"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:text="Name : "
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvOrderNo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvName"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvOrderNo"
+                        app:layout_constraintStart_toEndOf="@id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtEmail"
+                        android:layout_marginStart="10dp"
+                        android:text="Email id : "
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEmail"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtName"
+                        app:layout_constraintStart_toEndOf="@id/txtEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtContact"
+                        android:layout_marginStart="10dp"
+                        android:text="Contact : "
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvContact"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+                        app:layout_constraintStart_toEndOf="@id/txtContact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llAddress"
+                        android:visibility="gone"
+                        android:background="@color/app_grey"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/txtContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtAddress"
+                            android:layout_marginStart="10dp"
+                            android:text="Address : "
+                            android:fontFamily="@font/dosis_semi_bold"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="16sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvAddress"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/dosis_semi_bold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtCity"
+                        android:visibility="gone"
+                        android:layout_marginStart="10dp"
+                        android:text="City : "
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/llAddress"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCity"
+                        android:visibility="gone"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/llAddress"
+                        app:layout_constraintStart_toEndOf="@id/txtCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtPaidOn"
+                        android:visibility="gone"
+                        android:layout_marginStart="10dp"
+                        android:text="Paid On : "
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtCity"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPaidOn"
+                        android:visibility="gone"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtCity"
+                        app:layout_constraintStart_toEndOf="@id/txtPaidOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtShipCharge"
+                        android:visibility="gone"
+                        android:layout_marginStart="10dp"
+                        android:text="Ship Charge : "
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtPaidOn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvShipCharge"
+                        android:visibility="gone"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtPaidOn"
+                        app:layout_constraintStart_toEndOf="@id/txtShipCharge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtPayMode"
+                        android:layout_marginStart="10dp"
+                        android:text="Pay Mode : "
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtShipCharge"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPayMode"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtShipCharge"
+                        app:layout_constraintStart_toEndOf="@id/txtPayMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTxn"
+                        android:visibility="gone"
+                        android:layout_marginStart="10dp"
+                        android:text="TXN Id : "
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtPayMode"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTxn"
+                        android:visibility="gone"
+                        android:fontFamily="@font/dosis_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtPayMode"
+                        app:layout_constraintStart_toEndOf="@id/txtTxn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtProductDetails"
+                    android:text="Product Details"
+                    android:fontFamily="@font/dosis_bold"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:background="@color/light_blue"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:paddingTop="10dp"
+                android:paddingHorizontal="15dp"
+                android:paddingBottom="15dp"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    android:visibility="gone"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProductCode"
+                    android:visibility="gone"
+                    android:textSize="16sp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/orange_theme_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvAmount"
+                        android:text="600"
+                        android:textColor="@color/green_color_theme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtQty"
+                        android:visibility="gone"
+                        android:layout_marginStart="30dp"
+                        android:text="Qty : "
+                        android:textColor="@color/dark_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvQty"
+                        android:visibility="gone"
+                        android:text="2"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/serviceDate"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:visibility="visible"
+                        android:text="Service Date : "
+                        android:textColor="@color/dark_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:visibility="visible"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/serviceTime"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        android:visibility="visible"
+                        android:text="Service Time : "
+                        android:textColor="@color/dark_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:visibility="visible"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</layout>

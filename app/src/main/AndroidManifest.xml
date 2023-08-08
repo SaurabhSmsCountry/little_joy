@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.littlejoyindia.littlejoyindia">
+
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".LittleJoyIndiaApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".OnlineShoppingCartActivity"
+            android:exported="false"
+            android:label="@string/title_activity_online_shopping_cart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProductDescriptionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_product_description"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.dashboard.map.MapUIActivity" />
+        <activity android:name=".ui.dashboard.cart.CartActivity" /> <!-- for JobIntentService -->
+        <activity
+            android:name=".ui.dashboard.DashboardActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.timeslot.SelectTimeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.orderScreens.OrderDetailsScreenActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.orderScreens.ShoppingOrderListScreenActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.merchant.MerchantDetailsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.review.MerchantReviewActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.appointment.AppointmentActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.dealsHome.DealsHomeActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.paymentselection.PaymentActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.basicDetails.BasicDetailsActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.dashboard.addressSelection.AddressSelectionActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.dealsCity.DealsCityActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.productListing.ShoppingProductActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.productOverview.ProductDescriptionActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.cart.ui.OnlineShoppingCartActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.OnlineShoppingPaymentWebview.OnlineShoppingPaymentWebviewActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.orderConfirm.ShoppingOrderConfirmationScreen"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".utils.ImageViewerActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.dashboard.onlineShopping.productReview.ui.ActivityShoppingProductReview"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity android:name=".ui.splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.dashboard.onlineShopping.orderScreens.addReview.AddProductReviewActivity" />
+
+        <receiver
+            android:name=".utils.SMSReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${mapsApiKey}" />
+
+        <service
+            android:name=".utils.FileUploadService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".utils.FetchAddressIntentService"
+            android:exported="false" />
+    </application>
+
+</manifest>

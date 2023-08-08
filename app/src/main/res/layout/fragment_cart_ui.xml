@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.DashboardActivity">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.cart.cartUI.CartUIViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListData"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:listitem="@layout/category_view" />
+
+            <LinearLayout
+                android:visibility="@{viewModel.isCheckOutAvailable ? View.VISIBLE : View.GONE}"
+                android:id="@+id/llCheckOutLayout"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:padding="8dp"
+                        style="@style/TextStyle.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Amount : "
+                        android:textColor="@color/colorPrimary"/>
+
+                    <TextView
+                        android:padding="8dp"
+                        android:text="@{viewModel.checkoutAmount}"
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:background="#FC3900"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btAddMore"
+                        android:onClick="@{()->viewModel.onclickAddMoreService()}"
+                        android:layout_width="0dp"
+                        android:textColor="@color/white"
+                        android:text="Add Services"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/right_arrow"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:onClick="@{()->viewModel.onclickCheckOutSaloon()}"
+                        android:text="Checkout"
+                        android:textColor="@color/white"
+                        android:background="#FC3900"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"/>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+
+</layout>

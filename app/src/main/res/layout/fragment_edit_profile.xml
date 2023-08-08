@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.profile.EditProfileViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.dashboard.profile.EditProfileFragment">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                android:elevation="8dp"
+                android:background="@color/orange_theme_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="20dp"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/white_alpha"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/myaccount_seleted"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtName"
+                android:layout_margin="10dp"
+                android:textColor="@color/textColorDark"
+                android:text="Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvName"
+                android:hint="name"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/textColorDark"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtMobile"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/textColorDark"
+                android:text="Mobile Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMobile"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/textColorDark"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="@color/notfill"
+                android:background="@drawable/card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtEmail"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/textColorDark"
+                android:text="Email Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmail"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/textColorDark"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="@color/notfill"
+                android:background="@drawable/card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtReferId"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/textColorDark"
+                android:text="Referral ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReferId"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/textColorDark"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="@color/notfill"
+                android:background="@drawable/card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDate"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/textColorDark"
+                android:text="Joining Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDate"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/textColorDark"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="@color/notfill"
+                android:background="@drawable/card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:onClick="@{()->viewModel.onSaveProfile()}"
+                android:background="@drawable/drawable_button_bg"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:layout_marginVertical="30dp"
+                android:layout_marginHorizontal="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</layout>

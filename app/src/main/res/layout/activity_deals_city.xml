@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.timeslot.SelectTimeActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.dealsCity.DealsCityViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar_with_back"
+            android:layout_alignParentTop="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/header_img_lca"
+                android:scaleType="fitXY"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:onClick="@{()->viewModel.onCurrentLocationSelect()}"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:background="@drawable/reactangle_primary_corner"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextStyle.Heading"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@drawable/currnet_icon"
+                    android:drawablePadding="12dp"
+                    android:text="Use my current location"
+                    android:layout_margin="8dip"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextStyle.Heading"
+                android:gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Top Cities"
+                android:layout_margin="8dip"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListData"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:listitem="@layout/item_deals_city" />
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</layout>

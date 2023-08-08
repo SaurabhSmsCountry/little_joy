@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.cart.CartActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.cart.CartViewModel" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar_with_back"
+            android:layout_alignParentTop="true"/>
+
+        <FrameLayout
+            android:layout_below="@id/toolbarLayout"
+            android:id="@+id/clRootView"
+            android:layout_width="match_parent"
+            android:background="@color/app_grey"
+            android:layout_height="match_parent"
+            >
+
+
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</layout>

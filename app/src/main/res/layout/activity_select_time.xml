@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.timeslot.SelectTimeActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.timeslot.SelectTimeViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            layout="@layout/toolbar_with_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+
+        <ScrollView
+            android:layout_weight="1"
+            android:paddingBottom="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/imgPrevious"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:src="@drawable/left_arrow" />
+
+                    <TextView
+                        android:id="@+id/tvCurrentDayAndDate"
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black_effective"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:src="@drawable/right_arrow_time" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/morning" />
+
+                    <TextView
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/round_time_slot"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Morning Before\n12:00 PM"
+                        android:textColor="@color/black_effective"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_1"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(1)}"
+                            android:padding="8dp"
+                            android:text="09:00 AM - 09:30 AM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_2"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(2)}"
+                            android:padding="8dp"
+                            android:text="09:30 AM - 10:00 AM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_3"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(3)}"
+                            android:padding="8dp"
+                            android:text="10:00 AM - 10:30 AM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_4"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(4)}"
+                            android:padding="8dp"
+                            android:text="10:30 AM - 11:00 AM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_5"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(5)}"
+                            android:padding="8dp"
+                            android:text="11:00 AM - 11:30 AM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_6"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(6)}"
+                            android:padding="8dp"
+                            android:text="11:30 AM - 12:00 AM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/afternoon" />
+
+                    <TextView
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/round_time_slot"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Afternoon Before\n4:00 PM"
+                        android:textColor="@color/black_effective"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_7"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(7)}"
+                            android:padding="8dp"
+                            android:text="12:00 PM - 12:30 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_8"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(8)}"
+                            android:padding="8dp"
+                            android:text="12:30 PM - 01:00 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_9"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(9)}"
+                            android:padding="8dp"
+                            android:text="01:00 PM - 01:30 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_10"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(10)}"
+                            android:padding="8dp"
+                            android:text="01:30 PM - 02:00 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_11"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(11)}"
+                            android:padding="8dp"
+                            android:text="02:00 PM - 02:30 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_12"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(12)}"
+                            android:padding="8dp"
+                            android:text="02:30 PM - 03:00 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_13"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(13)}"
+                            android:padding="8dp"
+                            android:text="03:00 PM - 03:30 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_14"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(14)}"
+                            android:padding="8dp"
+                            android:text="03:30 PM - 04:00 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/evening" />
+
+                    <TextView
+                        style="@style/TextStyle.Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/round_time_slot"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Evening Before\n7:00 PM"
+                        android:textColor="@color/black_effective"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_15"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(15)}"
+                            android:padding="8dp"
+                            android:text="04:00 PM - 04:30 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_16"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(16)}"
+                            android:padding="8dp"
+                            android:text="04:30 PM - 05:00 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_17"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(17)}"
+                            android:padding="8dp"
+                            android:text="05:00 PM - 05:30 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_18"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(18)}"
+                            android:padding="8dp"
+                            android:text="05:30 PM - 06:00 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_19"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(19)}"
+                            android:padding="8dp"
+                            android:text="06:00 PM - 06:30 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_20"
+                            style="@style/TextStyle.Title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_time_slot_item_non_active"
+                            android:gravity="center"
+                            android:onClick="@{()->viewModel.setCurrentTimeSlot(20)}"
+                            android:padding="8dp"
+                            android:text="06:30 PM - 07:00 PM"
+                            android:textColor="@color/black_effective"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnServerLogin"
+            style="@style/TextStyle.Heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/reactangle_primary_corner"
+            android:onClick="@{()->viewModel.onClickNext()}"
+            android:padding="10dp"
+            android:text="NEXT"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.basicDetails.BasicDetailsActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.basicDetails.BasicDetailsViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            layout="@layout/toolbar_with_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_grey"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/basicCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:background="#A463E5"
+                    android:padding="8dp"
+                    app:cardCornerRadius="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            style="@style/TextStyle.Heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="10dp"
+                            android:visibility="visible"
+                            android:text=" User Details"
+                            android:drawableStart="@drawable/user_icon"
+                            android:textColor="@color/black_effective"
+                            android:textSize="20sp" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etName"
+                            style="@style/TextStyle.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_edittext"
+                            android:hint="Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:maxLength="50"
+                            android:maxLines="1"
+                            android:padding="12dp"
+                            android:text="@{viewModel.name}"
+                            android:textColor="@color/textColorDark" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etMobile"
+                            style="@style/TextStyle.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/rounded_edittext"
+                            android:hint="Mobile Number"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal|phone"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:padding="12dp"
+                            android:text="@{viewModel.mobile}"
+                            android:textColor="@color/textColorDark" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etEmail"
+                            style="@style/TextStyle.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/rounded_edittext"
+                            android:hint="Email Id"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:padding="12dp"
+                            android:textColor="@color/textColorDark"
+                            android:visibility="gone" />
+
+
+                        <LinearLayout
+                            android:id="@+id/spinner_city"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextStyle.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="City"
+                                android:textColor="@color/textColorDark"
+                                android:textSize="14sp" />
+
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/spCity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/llSelectedAddress"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/address"
+                                style="@style/TextStyle.Heading"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Address"
+                                android:textColor="@color/black_effective"
+                                android:textSize="16sp"
+                                app:drawableRightCompat="@android:drawable/ic_menu_edit" />
+
+
+                            <TextView
+                                android:id="@+id/tvAddress"
+                                style="@style/TextStyle.Title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="C1-104\nDelhi"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/basicCard"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/white"
+                    android:padding="6dp"
+                    app:cardCornerRadius="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextStyle.Heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:visibility="visible"
+                            android:text=" Address"
+                            android:drawableStart="@drawable/map_gray"
+                            android:textColor="@color/black_effective"
+                            android:textSize="20sp" />
+
+
+                        <TextView
+                            style="@style/TextStyle.Title"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/dark_gray"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etHouseNo"
+                            style="@style/TextStyle.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="16dp"
+                            android:hint="House no./Building name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:maxLines="1"
+                            android:textColor="@color/textColorDark" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFullAddress"
+                            style="@style/TextStyle.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Full Address"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:maxLines="1"
+                            android:layout_marginTop="16dp"
+                            android:textColor="@color/textColorDark" />
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etLandmark"
+                            style="@style/TextStyle.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:hint="Landmark"
+                            android:imeOptions="actionDone"
+                            android:inputType="textNoSuggestions"
+                            android:maxLines="1"
+                            android:textColor="@color/textColorDark" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etDistrict"
+                                style="@style/TextStyle.EditText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="City"
+                                android:imeOptions="actionDone"
+                                android:inputType="textNoSuggestions"
+                                android:maxLines="1"
+                                android:textColor="@color/textColorDark"
+                                android:visibility="visible" />
+
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="match_parent"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etStreetNo"
+                                style="@style/TextStyle.EditText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="Street No"
+                                android:imeOptions="actionNext"
+                                android:inputType="textNoSuggestions"
+                                android:maxLines="1"
+                                android:textColor="@color/textColorDark"
+                                android:visibility="gone" />
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="match_parent"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etPincode"
+                                style="@style/TextStyle.EditText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="Pincode"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal"
+                                android:maxLines="1"
+                                android:textColor="@color/textColorDark"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etState"
+                                style="@style/TextStyle.EditText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:layout_weight="1"
+                                android:hint="State"
+                                android:imeOptions="actionDone"
+                                android:inputType="textNoSuggestions"
+                                android:maxLines="1"
+                                android:textColor="@color/textColorDark"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btnServerLogin"
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/reactangle_primary_corner"
+                    android:onClick="@{()->viewModel.onClickNext()}"
+                    android:padding="10dp"
+                    android:text="NEXT"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

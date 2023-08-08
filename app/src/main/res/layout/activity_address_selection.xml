@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.addressSelection.AddressSelectionActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.addressSelection.AddressSelectionViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar_with_back"
+            android:layout_alignParentTop="true"/>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvListData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_address" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_margin="16dp"
+                    android:onClick="@{()->viewModel.clcikOnAddNewAddress()}"
+                    style="@style/TextStyle.Heading"
+                    android:paddingLeft="32dp"
+                    android:textColor="@color/white"
+                    android:paddingRight="32dp"
+                    android:drawablePadding="16dp"
+                    android:gravity="center|left"
+                    android:text="Add New Address"
+                    android:layout_gravity="center"
+                    android:drawableStart="@drawable/plus_icon"
+                    android:background="@drawable/roundbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</layout>

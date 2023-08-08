@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.littlejoyindia.littlejoyindia.ui.dashboard.onlineShopping.productReview.ui.ShoppingProductReviewViewModel" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/back_icon" />
+
+                <TextView
+                    android:id="@+id/proTitle"
+                    style="@style/TextStyle.Heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/reviews"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_otp_code"
+            android:backgroundTint="@color/light_gray"
+            android:padding="5dp"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/avgRating"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvMainRating"
+                style="@style/TextStyle.Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0 of 5"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTotalReview"
+            style="@style/TextStyle.Heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0 customer reviews"
+            android:textStyle="normal"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/TextStyle.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/tvStar5"
+                android:text="5 Stars"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+            <ProgressBar
+                android:layout_marginLeft="10dp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/linear_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/progress5"
+                android:max="100"
+                android:progress="45"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/TextStyle.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/tvStar4"
+                android:text="4 Stars"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+            <ProgressBar
+                android:layout_marginLeft="10dp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/linear_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/progress4"
+                android:max="100"
+                android:progress="45"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/TextStyle.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/tvStar3"
+                android:text="3 Stars"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+            <ProgressBar
+                android:layout_marginLeft="10dp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/linear_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/progress3"
+                android:max="100"
+                android:progress="45"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/TextStyle.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/tvStar2"
+                android:text="2 Stars"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+            <ProgressBar
+                android:layout_marginLeft="10dp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/linear_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/progress2"
+                android:max="100"
+                android:progress="45"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/TextStyle.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/tvStar1"
+                android:text="1 Stars"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+            <ProgressBar
+                android:layout_marginLeft="10dp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/linear_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/progress1"
+                android:max="100"
+                android:progress="45"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextStyle.Heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="based on all customer review"
+            android:textStyle="normal"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviewsRecyclerView"
+            tools:listitem="@layout/product_review_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>

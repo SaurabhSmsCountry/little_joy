@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "488246743527",
+    "firebase_url": "https://littlejoyindia-e7a46.firebaseio.com",
+    "project_id": "littlejoyindia-e7a46",
+    "storage_bucket": "littlejoyindia-e7a46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488246743527:android:c9ce23ecbcfba0e7",
+        "android_client_info": {
+          "package_name": "com.littlejoyindia.littlejoyindia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488246743527-oiqsk235bh6taiqt70040ij7n8ooudu9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.littlejoyindia.littlejoyindia",
+            "certificate_hash": "94e9743fd2655f414bd029bb302e6b073f486a61"
+          }
+        },
+        {
+          "client_id": "488246743527-1in5ltp358vvtmde2qeg1v0rjlqunl9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpRxgeWOcJEfZVaepchG14L3KbcLAnB4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488246743527-1in5ltp358vvtmde2qeg1v0rjlqunl9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

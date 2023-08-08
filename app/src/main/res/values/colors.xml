@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#58007E</color>
+    <color name="colorPrimaryDark">#58007E</color>
+    <color name="colorTabSelected">#FC3900</color>
+    <color name="colorAccent">#67AF0E</color>
+    <color name="light_gray">#dbdbdb</color>
+    <color name="gray_cf">#cfcfcf</color>
+    <color name="gray">#8d8d8d</color>
+    <color name="semi_gray">#979797</color>
+    <color name="dark_gray">#696969</color>
+    <color name="bg_color">#f7f7f7</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="textColorDark">#444444</color>
+    <color name="shadow">#d0d8dc</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent_white">#88ffffff</color>
+    <color name="fb">#3b5998</color>
+    <color name="google">#d34836</color>
+    <color name="notfill">#eceff4</color>
+
+    <!--Design colors-->
+    <color name="light_blue_icon">#3B81F8</color>
+    <color name="red_dark">#c88628</color>
+    <color name="red_dark2">#D85A1B</color>
+    <color name="cyan_light">#c9ebee</color>
+    <color name="cyan">#b5e3e7</color>
+    <color name="cyan_dark">#70BDC6</color>
+    <color name="navy_blue">#214258</color>
+    <color name="navy_blue_dark">#1C3A4E</color>
+    <color name="light_green">#78DC96</color>
+    <color name="light_blue">#55C8F0</color>
+    <color name="blue_black_dark">#13171d</color>
+    <color name="blue_black_light">#516179</color>
+    <color name="blue_grey_light">#A5B4C8</color>
+    <color name="orange">#FFA500</color>
+    <color name="yellow">#fff44f</color>
+    <color name="golden">#FFD700</color>
+
+
+    <color name="colorNotAnswered">#FA3550</color>
+    <color name="colorNotVisit">#4A4A4A</color>
+    <color name="colorAnswered">#00C475</color>
+    <color name="colorNotAnsweredMarked">#8494D3</color>
+    <color name="colorAnsweredMarked">#fba832</color>
+    <color name="red_color_theme">#F8001C</color>
+    <color name="green_color_theme">#66AF07</color>
+    <color name="active_list_item">#00BCE2</color>
+    <color name="app_grey">#f0f0f0</color>
+    <color name="bg_color_grey">#EEF3F6</color>
+
+    <color name="orange_theme_color">#FF6738</color>
+
+
+</resources>
